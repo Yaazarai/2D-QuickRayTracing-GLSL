@@ -32,7 +32,7 @@ See? The color of the ray-traced pixels are dark (0 length) or red (radius lengt
 One major problem does exist, but not relevant if your light radi are under 255px. The color channel of a pixel is converted to texture space which only allows 8-bits per channel. Which means that the larger your light radius, the less precision you have over the ray-tracer. This can be fixed with a bit of work to store the ray-length across all 4 color channels.
 
 ### Changing Light Sizes
-GLSL/GLSL ES do nto allow you to have dynamic loop sizes, so the max radius size must be set within the shader itself as constant. Which means we need to re-define the shader constant values to accomodate differnet light radius'.
+GLSL/GLSL ES does not allow you to have dynamic loop sizes, so the max radius size must be set within the shader itself as constant. Which means we need to re-define the shader constant values to accomodate differnet light radius'.
 
 The ray-tracer texture size follows this formula: `length = pow(2.,ceil(log2(sqrt(2.*PI*MAXRADI_SIZE))))`. The `RAYTEXT_SIZE` is the nearest higher power of 2, square-root of the circfumerance of the light. E.g. if the radius is 56 then you'll get `square = sqrt(2 * PI * R) = 18` then the nearest higher power of 2 of 18 is 32.
 
