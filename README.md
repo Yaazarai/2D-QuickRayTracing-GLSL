@@ -13,8 +13,6 @@ The left half of the GIF shows where in the texture the rays are being traced fr
 ## Pass Two: Light Sampler
 The second pass is simple, for all pixels within the light's radius, get the angle of the pixel to the light center, convert that angle to a 1D index, then finally convert that to a 2D position to look up the ray in the ray-traced texture. If the distance from the light to the pixel is shorter than the ray, then the pixel is lit up.
 
-A few precautions have been taken to fix a few small known issues: Each pixel actually checks the two nearest rays, instead of one. Each pixel can be defined as being between two rays, which gives us a more comprehensive test for determining if a pixel is actually lit up. Next there is a math issue going on where some pixels at the edge of walls are being lit up, when they shouldn't be... To combat this I simply have each pixel check for a wall collision under it's XY position, if there is a collision the pixel is not lit up.
-
 ## Example:
 Here you can see an example texture output of the ray-tracer. The texture can be seen as split into 4 sections: top (0-90 deg), middle-top (91-180 deg), middle-bottom (181-270 deg), bottom (271-360 deg).
 
@@ -27,9 +25,6 @@ See? The color of the ray-traced pixels are dark (0 length) or red (radius lengt
 
 ### End Result:
 ![sampler](https://i.imgur.com/dcEACfu.gif)
-
-### Problems
-One major problem does exist, but not relevant if your light radi are under 255px. The color channel of a pixel is converted to texture space which only allows 8-bits per channel. Which means that the larger your light radius, the less precision you have over the ray-tracer. This can be fixed with a bit of work to store the ray-length across all 4 color channels.
 
 ### Changing Light Sizes
 GLSL/GLSL ES does not allow you to have dynamic loop sizes, so the max radius size must be set within the shader itself as constant. Which means we need to re-define the shader constant values to accomodate differnet light radius'.
