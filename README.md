@@ -1,6 +1,3 @@
-Download GameMaker Source:
-https://drive.google.com/open?id=1c8s4QCsBDUJjpMfbDKrixg4fyCuNWLjt
-
 Google Docs Paper:
 https://docs.google.com/document/d/1cTcYOqJ5W9Dmwie2n3KktkpGlqlFFsA5WPvvoL6lG3E/edit?usp=sharing
 
