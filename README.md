@@ -116,4 +116,4 @@ From there we can read out the ray from the texture:
 
 Then convert the R,G components back to the original ray length. Finally we compare the length of the ray to the distance of the current pixel from the light center and only light up the pixel if the distance is shorter than the ray. From there you apply your tonemap and color and voila, ray-traced lighting. The color blending can be handled in another shader, but since I am using GameMaker I am using GameMaker’s built in blend modes for that. Final result:
 
-![result](https://i.imgur.com/ds0XQ8c.gif)
+![result](https://i.imgur.com/fbx42HB.gif)
