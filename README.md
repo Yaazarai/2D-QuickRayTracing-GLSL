@@ -45,6 +45,8 @@ As such we have a few formulas for converting back and forth between these coord
 Dual-Pass Shaders
 The shader code is provided with this documentation along with a working example using GameMaker:Studio 2. See download link at the beginning of this document or attached ZIP file.
 
+### Polar-Ray Traced Lighting (on GPUs)
+
 This methodology uses a dual-pass shader where the first shader outputs a texture containing pre-traced rays and the second shader uses that texture to lookup the pre-traced rays pointing in the direction of each pixel in the scene to do distance comparisons for the final light render. Let’s take a look at this in steps from pass A to B.
 
 Pass A: RayTracing Shader
