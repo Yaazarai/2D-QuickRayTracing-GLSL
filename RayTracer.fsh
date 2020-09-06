@@ -16,7 +16,6 @@ void main() {
 	// Gets the lengthdir_xy polar cooridinate around the light's center.
 	vec2 Delta = vec2(cos(Theta), -sin(Theta));
 	// "Step" gets checks whether the current ray index < ray count, if not the ray is not traced (for-loop breaks).
-	float v1 = step(xyRay.x,xyRay.y);
 	for(float v = step(xyRay.x,xyRay.y), d = 0.; d < MAXRADIUS * v; d++)
 		/*
 			"in_Light.z < d" Check if the current ray distance(length) "d" is > light radius (if so, then break).
