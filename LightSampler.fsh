@@ -34,5 +34,5 @@ void main() {
 		ToneMap = ToneMapFunc(Distance, in_Light.z);
 	
 	// Draw the final pixel output with the source and destination color lerp'd together, then apply the gradient/tonemap.
-	gl_FragColor = vec4(mix(in_ColorD, in_ColorS, vec3(ToneMap)) * RayVisible * ToneMap, ToneMap * RayVisible);
+	gl_FragColor = vec4(mix(in_ColorD, in_ColorS, vec3(ToneMap)) * ToneMap, ToneMap * RayVisible);
 }
