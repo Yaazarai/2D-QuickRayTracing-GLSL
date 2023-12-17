@@ -81,7 +81,7 @@ Each pixel on the texture in Figure 2 is a ray with a given length stored as the
 
 Once we know the angle that is associated with the ray for this pixel we can iterate from the center of the light outwards to the edge of the light’s perimeter until we hit a collision on the collision map. This iteration is started by finding the delta XY position at the associated angle, this is equivalent to GMS2’s lengthdir_xy(dir,len) functions:
 
-	vec2(x,y) = cos(Angle), -sing(Angle)
+	vec2(x,y) = cos(Angle), -sin(Angle)
 
 The iteration is then performed as a for-loop from 0 to max radius.. You cannot have variable length for-loops in shaders, so we set a predefined max radius and cut short using the GLSL-ES step(val,val) function. We then multiply the iterator by the delta position to step across the ray. Then you can do a texture lookup at that position: (here we’re only looking at the A (alpha) component because we’re only using a black alpha texture where every pixel is black and collisions have an alpha of 1 and no collision alpha of 0:
 
