@@ -4,6 +4,8 @@ https://docs.google.com/document/d/1cTcYOqJ5W9Dmwie2n3KktkpGlqlFFsA5WPvvoL6lG3E/
 Polar-Ray Traced Lighting
 By Alexander S. Griffis
 
+![result](https://i.imgur.com/WtNi3Xi.gif)
+
 ### Abstract
 
 Ray-tracing is a massive performance problem for game developers due to the mass amount of data that needs to be processed in order to achieve an adequate result. The use for ray-tracing varies from lighting to collisions to line of sight detection with enemies. On CPUs ray-tracing takes up a lot of clock cycles and stepping over textures, across arrays of tiles or through object space and looping through objects comes at a heavy cost of performance. Even with GPUs ray-tracing--where GPUs excel at texture sampling--is still performance heavy and leaves people with using more complex systems like SDFs (signed distance fields) to approximate ray-tracing. However there is a solution… Compute Shaders! Granted I’ve never used them, but you can simulate a compute shader within a fragment shader by treating the destination texture as a 2D array of 4 byte pieces of data rather than colors/fragments/pixels.
